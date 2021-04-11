@@ -17,7 +17,7 @@ version = Version [0,1,0,0] []
 bindir, libdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/Users/just_terror/VSU/4 course (2 sem)/Functional_Programming/lab2/tr-0.1.0.0/.stack-work/install/x86_64-osx/c5172af33f472de486d6411348636991e8f8f7fcf39302b0d932ca78621d0508/7.10.2/bin"
-libdir     = "/Users/just_terror/VSU/4 course (2 sem)/Functional_Programming/lab2/tr-0.1.0.0/.stack-work/install/x86_64-osx/c5172af33f472de486d6411348636991e8f8f7fcf39302b0d932ca78621d0508/7.10.2/lib/x86_64-osx-ghc-7.10.2/tr-0.1.0.0-JHneF6tdHeqFJn5wnSxbWA"
+libdir     = "/Users/just_terror/VSU/4 course (2 sem)/Functional_Programming/lab2/tr-0.1.0.0/.stack-work/install/x86_64-osx/c5172af33f472de486d6411348636991e8f8f7fcf39302b0d932ca78621d0508/7.10.2/lib/x86_64-osx-ghc-7.10.2/tr-0.1.0.0-HFaWPnaeoE2K0NoMoEaoZ8"
 datadir    = "/Users/just_terror/VSU/4 course (2 sem)/Functional_Programming/lab2/tr-0.1.0.0/.stack-work/install/x86_64-osx/c5172af33f472de486d6411348636991e8f8f7fcf39302b0d932ca78621d0508/7.10.2/share/x86_64-osx-ghc-7.10.2/tr-0.1.0.0"
 libexecdir = "/Users/just_terror/VSU/4 course (2 sem)/Functional_Programming/lab2/tr-0.1.0.0/.stack-work/install/x86_64-osx/c5172af33f472de486d6411348636991e8f8f7fcf39302b0d932ca78621d0508/7.10.2/libexec"
 sysconfdir = "/Users/just_terror/VSU/4 course (2 sem)/Functional_Programming/lab2/tr-0.1.0.0/.stack-work/install/x86_64-osx/c5172af33f472de486d6411348636991e8f8f7fcf39302b0d932ca78621d0508/7.10.2/etc"

@@ -6,6 +6,7 @@
 -- THE SAME WHEN TESTING!
 {-# LANGUAGE MultiWayIf #-}
 
+
 module Tr
     ( CharSet
     , tr
