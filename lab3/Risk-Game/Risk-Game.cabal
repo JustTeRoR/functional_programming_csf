@@ -11,7 +11,7 @@ homepage:       https://github.com/aaksn/Functional-Programming#readme
 bug-reports:    https://github.com/aaksn/Functional-Programming/issues
 author:         Aksenov Anton
 maintainer:     example@example.com
-copyright:      2021 Aksenov Anton
+copyright:      2021 Pavlenok Sergey
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple

@@ -72,7 +72,7 @@ successProb (Battlefield attackersNumber defendersNumber) = do
 
 demonstrateGame :: IO ()
 demonstrateGame = do
-  values <- evalRandIO $ invasion (Battlefield 7 10)
-  prob <- evalRandIO $ successProb (Battlefield 7 10)
+  values <- evalRandIO $ invasion (Battlefield 10 10)
+  prob <- evalRandIO $ successProb (Battlefield 10 10)
   print values
   print prob

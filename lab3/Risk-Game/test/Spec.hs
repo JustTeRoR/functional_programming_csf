@@ -25,7 +25,7 @@ main = hspec $ describe "Test scope" $ do
     describe "Probablity edge testing1" $
       it "1 probability without defenders" $
         returnVal (successProb (Battlefield 10 0)) `shouldBe` (1.0 :: Double)
-
+  
     describe "Probablity edge testing2" $
       it "0 probability without attackers" $
          returnVal (successProb (Battlefield 0 10)) `shouldBe` (0.0 :: Double)
