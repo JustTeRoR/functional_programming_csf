@@ -11,7 +11,7 @@ module Tr
     ( CharSet
     , tr
     ) where
-
+--import Data.String.Utils
 -- | Just to give `tr` a more descriptive type
 type CharSet = String
 
@@ -33,35 +33,29 @@ type CharSet = String
 --
 -- It's up to you how to handle the first argument being the empty string, or
 -- the second argument being `Just ""`, we will not be testing this edge case.
-equivalentElement :: Char -> CharSet -> Bool
-equivalentElement el [] = False
-equivalentElement el (x:xs) =
-    if | el == x -> True
-       | otherwise -> equivalentElement el xs
 
 insertChar :: CharSet -> CharSet -> Char -> Char 
 insertChar (inChar:inset) (outChar:outset) x =
     if | x == inChar -> outChar
        | otherwise -> insertChar inset outset x     
 
-replace :: CharSet -> CharSet -> String -> String
-replace _ _ [] = []
-replace inset outset (x:xs) = 
-    if | x `equivalentElement` inset  ->
-        if  | length outset == length inset -> insertChar inset outset x : replace inset outset xs
-            | otherwise ->  head outset : replace inset outset xs
-       | otherwise -> x : replace inset outset xs
+replace :: CharSet -> CharSet -> String -> String 
+replace inset outset xs = reverse $ replaceAssist inset outset xs [] 
+    where 
+        replaceAssist _ _ [] acc = acc 
+        replaceAssist inset outset (x:xs) acc = 
+            if x `elem` inset then 
+                if length outset == length inset then replaceAssist inset outset xs (insertChar inset outset x : acc) 
+                else replaceAssist inset outset xs (head outset : acc) 
+            else replaceAssist inset outset xs (x : acc)
 
-delete :: CharSet -> String -> String
-delete _ [] = []
-delete inset (x:xs) = 
-    if | x `equivalentElement` inset -> delete inset xs
-       | otherwise -> x : delete inset xs
+removeChar :: CharSet -> String -> String
+removeChar inset  xs = [ x | x <- xs, not (x `elem` inset) ]
 
 tr :: CharSet -> Maybe CharSet -> String -> String
 tr [] (Just []) xs = xs
 tr _inset _outset xs = 
     case _outset of
         Just outset -> replace _inset outset xs
-        Nothing -> delete _inset xs 
+        Nothing -> removeChar _inset xs 
 

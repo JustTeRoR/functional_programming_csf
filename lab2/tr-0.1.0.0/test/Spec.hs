@@ -51,6 +51,30 @@ main = hspec $ describe "Testing tr" $ do
     describe "delete check2" $
       it "work -> wo" $
         trDeleting "rk" "work" `shouldBe` "wo" 
+
+    describe "border test1" $
+      it "work -> work" $
+        tr' "" "ll" "work" `shouldBe` "work"
+
+    describe "border test2" $
+      it "border -> border" $
+        tr' "ll" "" "border" `shouldBe` "border"
+
+    describe "border test3" $
+      it " -> " $
+        tr' "ll" "kk" "" `shouldBe` ""
+
+    describe "delete check3" $
+      it "work -> wok" $
+        trDeleting "r" "work" `shouldBe` "wok" 
+
+    describe "delete check4" $
+      it "1heytime -> heyme" $
+        trDeleting "1ti" "1heytime" `shouldBe` "heyme" 
+    
+    describe "delete check border" $
+      it "work -> work" $
+        trDeleting "" "work" `shouldBe` "work" 
     
     describe "delete all" $
       it "hello -> " $
