@@ -32,10 +32,15 @@ main = hspec $ describe "Testing tr" $ do
       it "abc -> d" $
         tr' "abc" "d" "abcd" `shouldBe` "dddd"
 
-    describe "hello" $
-      it "hello -> holle" $
-        tr' "eo" "oe" "hello" `shouldBe` "holle"
+    describe "inset > outset" $
+      it "abcdef -> dddddf" $
+        tr' "abcde" "d" "abcdef" `shouldBe` "dddddf"
     
+    describe "inset < outset" $
+      it "atfa -> btfb" $
+        tr' "a" "bbb" "atfa" `shouldBe` "btfb"
+
+
     describe "workCheck1" $
       it "work -> woll" $
         tr' "rk" "ll" "work" `shouldBe` "woll"
@@ -64,6 +69,10 @@ main = hspec $ describe "Testing tr" $ do
       it " -> " $
         tr' "ll" "kk" "" `shouldBe` ""
 
+    describe "border test4" $
+      it "attr->attr" $
+        tr' "" "" "attr" `shouldBe` "attr"
+
     describe "delete check3" $
       it "work -> wok" $
         trDeleting "r" "work" `shouldBe` "wok" 
@@ -76,6 +85,14 @@ main = hspec $ describe "Testing tr" $ do
       it "work -> work" $
         trDeleting "" "work" `shouldBe` "work" 
     
+    describe "delete check border" $
+      it "work -> " $
+        trDeleting "work" "" `shouldBe` "" 
+    
+    describe "delete check border" $
+      it "work -> " $
+        trDeleting "" "" `shouldBe` "" 
+
     describe "delete all" $
       it "hello -> " $
         trDeleting "helo" "heeellooooo" `shouldBe` "" 
